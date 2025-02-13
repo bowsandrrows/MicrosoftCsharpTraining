@@ -112,12 +112,12 @@ do
     {
         case "1":
             // List all of our current pet information
-            for (int i = 0; i < maxPets; i ++)
+            for (int i = 0; i < maxPets; i++)
             {
                 if (ourAnimals[i, 0] != "ID #: ")
                 {
                     Console.WriteLine();
-                    for(int j = 0; j < 6; j++)
+                    for (int j = 0; j < 6; j++)
                     {
                         Console.WriteLine(ourAnimals[i, j]);
                     }
@@ -165,6 +165,7 @@ do
                         }
                     }
                 } while (validEntry == false);
+
                 // build the animal the ID number - for example C1, C2, D3 (for Cat 1, Cat 2, Dog 3) 
                 animalID = animalSpecies.Substring(0, 1) + (petCount + 1).ToString();
 
@@ -187,7 +188,7 @@ do
                         }
 
                     }
-                } while (validEntry == false); 
+                } while (validEntry == false);
 
                 // get a description of the pet's physical appearance/condition - animalPhysicalDescription can be blank.
                 do
@@ -283,15 +284,14 @@ do
                     if (animalAge != "?")
                     {
                         validEntry2 = int.TryParse(animalAge, out petAge);
+                        animalAge = petAge.ToString();
                     }
                     else
                     {
                         validEntry2 = true;
                     }
-
                 }
             } while (validEntry2 == false);
-            
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
