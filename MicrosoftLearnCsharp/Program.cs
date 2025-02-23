@@ -376,7 +376,7 @@ Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17
 Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)\n");
 */
 
-
+/*
 Console.Write("Input number in feet: ");
 string? getfeet = Console.ReadLine();
 if (getfeet != null)
@@ -409,3 +409,27 @@ static int FeetToInches2(float feet)
 {
     return (int)(feet * 12);
 }
+*/
+
+using System.ComponentModel.DataAnnotations;
+
+int[] ref_A = [2, 4];
+
+foreach (var item2 in ref_A)
+{
+    Console.Write(item2);
+}
+Console.WriteLine();
+int[] ref_B = ref_A;
+ref_B[0] = 5;
+foreach (var item in ref_B)
+{
+    foreach (var item1 in ref_A)
+    {
+        Console.Write($"{item1}");
+    }
+    Console.WriteLine($"{item}");
+}
+Console.WriteLine("--Reference Types--");
+Console.WriteLine($"ref_A[0]: {ref_A[0]} ref_A[1]: {ref_A[1]} {ref_A.Length}");
+Console.WriteLine($"ref_B[0]: {ref_B[0]} ref_B[1]: {ref_B[1]}");
