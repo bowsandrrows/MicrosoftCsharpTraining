@@ -433,3 +433,50 @@ foreach (var item in ref_B)
 Console.WriteLine("--Reference Types--");
 Console.WriteLine($"ref_A[0]: {ref_A[0]} ref_A[1]: {ref_A[1]} {ref_A.Length}");
 Console.WriteLine($"ref_B[0]: {ref_B[0]} ref_B[1]: {ref_B[1]}");
+
+
+string printResult = UserNamePrompt();
+Console.WriteLine(printResult);
+
+static string UserNamePrompt()
+{
+    Console.Write("What's your name? ");
+    string? userName = Console.ReadLine();
+    if (!string.IsNullOrEmpty(userName))
+    {
+        return MyWelcomFunction(userName);
+    }
+    else
+    {
+        return "No name provided.";
+    }
+}
+
+static string MyWelcomFunction(string name)
+{
+
+    return $"Welcome, {name}!";
+}
+
+
+string result = Age();
+Console.WriteLine(result);
+
+static string Age()
+{
+    Console.Write("What is your year of birth? ");
+    int userAge = Convert.ToInt32(Console.ReadLine());
+    if (!int.IsNegative(userAge))
+    {
+        int year = DateTime.Now.Year;
+
+        string? birthYear = Convert.ToString(year - userAge);
+        
+        return $"Your age is {birthYear}";
+    }
+    else
+    {
+        return $"{userAge} is invalid";
+    }
+}
+
