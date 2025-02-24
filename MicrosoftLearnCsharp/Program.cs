@@ -412,7 +412,7 @@ static int FeetToInches2(float feet)
 */
 
 using System.ComponentModel.DataAnnotations;
-
+/*
 int[] ref_A = [2, 4];
 
 foreach (var item2 in ref_A)
@@ -433,7 +433,7 @@ foreach (var item in ref_B)
 Console.WriteLine("--Reference Types--");
 Console.WriteLine($"ref_A[0]: {ref_A[0]} ref_A[1]: {ref_A[1]} {ref_A.Length}");
 Console.WriteLine($"ref_B[0]: {ref_B[0]} ref_B[1]: {ref_B[1]}");
-
+*/
 
 string printResult = UserNamePrompt();
 Console.WriteLine(printResult);
