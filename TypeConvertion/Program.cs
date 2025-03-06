@@ -42,6 +42,61 @@ Console.WriteLine(result2);
 
 Console.WriteLine("\t---------------------------------------\n");
 
+string myInput = "2.71828";
+decimal myInputDecimal = 0;
+if (decimal.TryParse(myInput, out myInputDecimal))
+{
+    Console.WriteLine(myInputDecimal);
+}
+Console.WriteLine((float)myInputDecimal);
+
+Console.WriteLine("\t---------------------------------------\n");
+
+int[,] matrix = new int[3, 3]
+{
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        Console.Write(matrix[i, j] + " ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("\t---------------------------------------\n");
+
+string[][][] statesWithCities =
+[
+    [
+        ["California", "Los Angeles", "San Francisco", "San Diego"],
+        ["Texas", "Houston", "Dallas", "Austin"],
+        ["Florida", "Miami", "Orlando", "Tampa"]
+    ],
+    [
+        ["New York", "New York City", "Buffalo", "Rochester"],
+        ["Illinois", "Chicago", "Springfield", "Naperville"],
+        ["Georgia", "Atlanta", "Savannah", "Athens"]
+    ],
+    [
+        ["Nevada", "Las Vegas", "Reno", "Carson City"],
+        ["Colorado", "Denver", "Boulder", "Colorado Springs"],
+        ["Washington", "Seattle", "Spokane", "Tacoma"]
+    ]
+];
+
+for (int i = 0; i < statesWithCities.Length; i++)
+{
+    for (int j = 0; j < statesWithCities[i].Length; j++)
+    {
+        Console.WriteLine($"State: {statesWithCities[i][j][0]}, First City: {statesWithCities[i][j][1]}");
+    }
+}
+
 
 
 /* 
