@@ -20,3 +20,43 @@ pip install pygame
 This will install PyGame in your virtual environment, and you can start using it in your Python code in Visual Studio.
 
 If you have any more questions or need further assistance, feel free to ask!
+
+```csharp
+int first = 2;
+string second = "4";
+string result = first + second;
+Console.WriteLine(result);
+
+Console.WriteLine();
+
+int myInt = 3;
+Console.WriteLine(myInt);
+decimal myDesimal = myInt;
+Console.WriteLine(myDesimal);
+
+Console.WriteLine();
+
+decimal newDecimal = 3.14m;
+Console.WriteLine($"This is decimals: {newDecimal}");
+
+int newInt = (int)newDecimal; // output 3 (loss of precision)
+Console.WriteLine($"This is int: {newInt}");
+
+Console.WriteLine();
+
+decimal myDecimal = 1.23456789m;
+float myFloat = (float)myDecimal;
+
+Console.WriteLine($"Decimal: {myDecimal}");
+Console.WriteLine($"Float  : {myFloat}");
+
+string my_first = "5";
+string my_second = "7";     // not advisable to convert, could be decimal.
+int message = int.Parse(my_first) + int.Parse(my_second);
+Console.WriteLine(message);
+
+string value1 = "5";
+string value2 = "7";
+int result2 = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+Console.WriteLine(result2);
+```
