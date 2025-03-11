@@ -59,4 +59,10 @@ string value1 = "5";
 string value2 = "7";
 int result2 = Convert.ToInt32(value1) * Convert.ToInt32(value2);
 Console.WriteLine(result2);
+
+string myString = "4.123456789";
+decimal myDecimal = decimal.Parse(myString); // 4.123456789
+decimal myNewDecimal = Convert.ToDecimal(myString); // 4.123456789
+Console.WriteLine($"Parse: {myDecimal} & {myNewDecimal}");
+
 ```
