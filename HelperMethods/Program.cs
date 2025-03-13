@@ -54,9 +54,11 @@ foreach (var pallet in pallets)
 //string[] pallets = ["B14", "A11", "B12", "A13"];
 Console.WriteLine("");
 
-Console.WriteLine($"Before: {pallets[0]}, {pallets[1]}");
+Console.WriteLine($"Before: {pallets[0].ToLower()}");
 Array.Clear(pallets, 0, 2);
-Console.WriteLine($"After: {pallets[0]}");
+
+if (pallets[0] != null) // in order to avoid an exception
+    Console.WriteLine($"After: {pallets[0].ToLower()}");
 
 Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
 foreach (var pallet in pallets)
