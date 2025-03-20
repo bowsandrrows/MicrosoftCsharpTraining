@@ -177,27 +177,49 @@ foreach (var pallet in pallets)
 #endregion
 
 
-Console.Write("Please enter 4 numbers separated by a comma or a dush: ");
-string? prompt = Console.ReadLine();
-char[] separators = [',', ':', '.', '/'];
-int total = 0;
-if (prompt != null && int.TryParse(prompt, out int _))
+//Console.Write("Please enter 4 numbers separated by a comma or a dush: ");
+//string? prompt = Console.ReadLine();
+//char[] separators = [',', ':', '.', '/'];
+//int total = 0;
+
+//if (prompt != null)
+//{
+//    string[] splitPrompt = prompt.Split(separators);
+
+//    foreach (var item in splitPrompt)
+//    {
+//        total += int.Parse(item);
+//    }
+//    //int num1 = int.Parse(splitPrompt[0]);
+//    //int num2 = int.Parse(splitPrompt[1]); 
+//    //int num3 = int.Parse(splitPrompt[2]);
+//    //int num4 = int.Parse(splitPrompt[3]);
+//    Console.WriteLine($"Total sum of your numbers is: {total}");
+//}
+//else
+//{
+//    //isValid = false;
+//    Console.WriteLine("We only accept numbers!");
+//}
+
+//  if (int.TryParse(item, out int number))
+
+Console.Write("Please enter 4 numbers separated by a comma or a dash: ");
+string? prompt = Console.ReadLine()?.Trim();
+if (prompt != null)
 {
-    string[] splitPrompt = prompt.Split(separators);
-    
-    foreach (var item in splitPrompt)
+    char[] separators = { ',', ':', '.', '/' };
+    string[] numbs = prompt.Split(separators);
+    foreach (var item in numbs)
     {
-        total += int.Parse(item);
+        Console.WriteLine(item);
     }
-    //int num1 = int.Parse(splitPrompt[0]);
-    //int num2 = int.Parse(splitPrompt[1]); 
-    //int num3 = int.Parse(splitPrompt[2]);
-    //int num4 = int.Parse(splitPrompt[3]);
 }
 else
 {
-    Console.WriteLine("We only accept numbers!");
+    Console.WriteLine("Input was null.");
 }
-    Console.WriteLine($"total sum of your numbers is: {total}");
+
 // Exercise - Complete a challenge to reverse words in a sentence
+
 
