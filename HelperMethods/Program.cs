@@ -224,11 +224,19 @@ else
 
 // Exercise - Complete a challenge to reverse words in a sentence
 
+// 
 
 string pangram = "The quick brown fox jumps over the lazy dog";
-List<string> word = new(pangram.Split(' '));
-foreach (var item in word)
-{
-    Console.WriteLine(item);
-}
 
+List<string> wordsList = [.. pangram.Split(' ')];
+List<char> chars;
+for (int i = 0; i < wordsList.Count; i++)
+{
+    chars = new List<char>(wordsList[i].ToCharArray().Reverse());
+    foreach (var item in chars)
+    {
+        Console.Write(item);
+    }
+    Console.Write(" "); // Adds a space after each reversed word
+}
+Console.WriteLine();
