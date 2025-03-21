@@ -202,8 +202,8 @@ foreach (var pallet in pallets)
 //    Console.WriteLine("We only accept numbers!");
 //}
 
-//  if (int.TryParse(item, out int number))
-
+#region code to reverse each word in a message
+/*
 Console.Write("Please enter 4 numbers separated by a comma or a dash: ");
 string? prompt = Console.ReadLine()?.Trim();
 if (prompt != null)
@@ -219,7 +219,16 @@ else
 {
     Console.WriteLine("Input was null.");
 }
+*/
+#endregion
 
 // Exercise - Complete a challenge to reverse words in a sentence
 
+
+string pangram = "The quick brown fox jumps over the lazy dog";
+List<string> word = new(pangram.Split(' '));
+foreach (var item in word)
+{
+    Console.WriteLine(item);
+}
 
