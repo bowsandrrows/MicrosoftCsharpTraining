@@ -240,3 +240,22 @@ for (int i = 0; i < wordsList.Count; i++)
     Console.Write(" "); // Adds a space after each reversed word
 }
 Console.WriteLine();
+
+
+/*
+1.To create the string array message, split the pangram string on the space character.
+2.Create a new newMessagearray that stores a reversed copy of the "word" string from the message array.
+3.Loop through each element in the message array, reverse it, and store this element in newMessage array.
+4.Join "word" strings from the array newMessage, using a space again, to create the desired single string to write to the console.
+ */
+
+string[] pangram2 = pangram.Split(" ");
+Array.Reverse(pangram2);
+string[] newMessagearray = pangram2.ToArray();
+
+foreach (var i in newMessagearray)
+{
+    
+    Console.WriteLine();
+    Console.WriteLine(i);
+}
