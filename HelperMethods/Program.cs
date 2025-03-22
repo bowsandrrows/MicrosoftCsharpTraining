@@ -176,7 +176,7 @@ foreach (var pallet in pallets)
 
 #endregion
 
-
+#region Multi-separator
 //Console.Write("Please enter 4 numbers separated by a comma or a dush: ");
 //string? prompt = Console.ReadLine();
 //char[] separators = [',', ':', '.', '/'];
@@ -201,30 +201,18 @@ foreach (var pallet in pallets)
 //    //isValid = false;
 //    Console.WriteLine("We only accept numbers!");
 //}
-
-#region code to reverse each word in a message
-/*
-Console.Write("Please enter 4 numbers separated by a comma or a dash: ");
-string? prompt = Console.ReadLine()?.Trim();
-if (prompt != null)
-{
-    char[] separators = { ',', ':', '.', '/' };
-    string[] numbs = prompt.Split(separators);
-    foreach (var item in numbs)
-    {
-        Console.WriteLine(item);
-    }
-}
-else
-{
-    Console.WriteLine("Input was null.");
-}
-*/
 #endregion
 
-// Exercise - Complete a challenge to reverse words in a sentence
 
-// 
+#region Challenge Unit 6 of 10
+/*
+1.To create the string array message, split the pangram string on the space character.
+2.Create a new newMessagearray that stores a reversed copy of the "word" string from the message array.
+3.Loop through each element in the message array, reverse it, and store this element in newMessage array.
+4.Join "word" strings from the array newMessage, using a space again, to create the desired single string to write to the console.
+ */
+/*
+// Exercise - Complete a challenge to reverse words in a sentence
 
 //string pangram = "The quick brown fox jumps over the lazy dog";
 
@@ -241,13 +229,6 @@ else
 //}
 //Console.WriteLine();
 
-
-/*
-1.To create the string array message, split the pangram string on the space character.
-2.Create a new newMessagearray that stores a reversed copy of the "word" string from the message array.
-3.Loop through each element in the message array, reverse it, and store this element in newMessage array.
-4.Join "word" strings from the array newMessage, using a space again, to create the desired single string to write to the console.
- */
 
 string pangram = "The quick brown fox jumps over the lazy dog";
 
@@ -268,4 +249,38 @@ foreach (var i in newMessagearray)
     }
     Console.Write(" ");
 }
+*/
+#endregion
 
+
+#region Complete a challenge to parse a string of orders, sort the orders and tag possible errors
+/*
+A345
+B123
+B177
+B179
+C15     - Error
+C234
+C235
+G3003   - Error
+ */
+
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+
+string[] individualOrders = orderStream.Split(',');
+Array.Sort(individualOrders);
+
+for (int i = 0; i < individualOrders.Length; i++)
+{
+    if (individualOrders[i].Length < 4 || individualOrders[i].Length > 4)
+    {
+        Console.WriteLine(individualOrders[i] + "\t- Error");
+    }
+    else
+    {
+        Console.WriteLine(individualOrders[i]);
+    }
+   
+}
+
+#endregion
