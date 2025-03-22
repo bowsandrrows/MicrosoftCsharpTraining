@@ -226,20 +226,20 @@ else
 
 // 
 
-string pangram = "The quick brown fox jumps over the lazy dog";
+//string pangram = "The quick brown fox jumps over the lazy dog";
 
-List<string> wordsList = [.. pangram.Split(' ')];
-List<char> chars;
-for (int i = 0; i < wordsList.Count; i++)
-{
-    chars = new List<char>(wordsList[i].ToCharArray().Reverse());
-    foreach (var item in chars)
-    {
-        Console.Write(item);
-    }
-    Console.Write(" "); // Adds a space after each reversed word
-}
-Console.WriteLine();
+//List<string> wordsList = [.. pangram.Split(' ')];
+//List<char> chars;
+//for (int i = 0; i < wordsList.Count; i++)
+//{
+//    chars = new List<char>(wordsList[i].ToCharArray().Reverse());
+//    foreach (var item in chars)
+//    {
+//        Console.Write(item);
+//    }
+//    Console.Write(" "); // Adds a space after each reversed word
+//}
+//Console.WriteLine();
 
 
 /*
@@ -249,13 +249,23 @@ Console.WriteLine();
 4.Join "word" strings from the array newMessage, using a space again, to create the desired single string to write to the console.
  */
 
+string pangram = "The quick brown fox jumps over the lazy dog";
+
 string[] pangram2 = pangram.Split(" ");
-Array.Reverse(pangram2);
 string[] newMessagearray = pangram2.ToArray();
+char[] reversedChars;
 
 foreach (var i in newMessagearray)
 {
-    
-    Console.WriteLine();
-    Console.WriteLine(i);
+    reversedChars = i.ToCharArray();
+    Array.Reverse(reversedChars);
+    foreach (var item in reversedChars)
+    {
+
+        item.ToString().Split(' ');
+        Console.Write(item);
+        
+    }
+    Console.Write(" ");
 }
+
