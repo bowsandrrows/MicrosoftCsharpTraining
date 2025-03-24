@@ -254,7 +254,7 @@ foreach (var i in newMessagearray)
 
 
 #region Complete a challenge to parse a string of orders, sort the orders and tag possible errors
-/*
+/* output
 A345
 B123
 B177
@@ -265,22 +265,122 @@ C235
 G3003   - Error
  */
 
-string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+//string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
 
-string[] individualOrders = orderStream.Split(',');
-Array.Sort(individualOrders);
+//string[] individualOrders = orderStream.Split(',');
+//Array.Sort(individualOrders);
 
-for (int i = 0; i < individualOrders.Length; i++)
-{
-    if (individualOrders[i].Length < 4 || individualOrders[i].Length > 4)
-    {
-        Console.WriteLine(individualOrders[i] + "\t- Error");
-    }
-    else
-    {
-        Console.WriteLine(individualOrders[i]);
-    }
-   
-}
+//for (int i = 0; i < individualOrders.Length; i++)
+//{
+//    if (individualOrders[i].Length < 4 || individualOrders[i].Length > 4)
+//    {
+//        Console.WriteLine(individualOrders[i] + "\t- Error");
+//    }
+//    else
+//    {
+//        Console.WriteLine(individualOrders[i]);
+//    }
 
+//}
+
+#endregion
+
+
+#region
+/*
+//  string formatting basics
+
+decimal price = 123.45m;
+int discount = 50;
+Console.WriteLine($"Price: {price:C} (Save {discount:C})");
+// output: Price: $123.45 (Save $50.00)
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+decimal measurement = 123456.78912m;
+Console.WriteLine($"Measurement: {measurement:N} units");
+// output: Measurement: 123,456.79 units
+// By default, the N numeric format specifier displays only two digits after the decimal point.
+
+// to display more precision, you can do that by adding a number after the specifier.
+// The following code will display four digits after the decimal point using the N4 specifier. 
+decimal measurement2 = 123456.78912m;
+Console.WriteLine($"Measurement: {measurement2:N4} units");
+// output: Measurement: 123,456.7891 units
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+// the P format specifier to format percentages and rounds to 2 decimal places. Add a number
+// afterwards to control the number of values displayed after the decimal point.
+decimal tax = .36785m;
+Console.WriteLine($"Tax rate: {tax:P2}");
+// output: Tax rate: 36.79%
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+// Composite formatting uses numbered placeholders within a string. At run time, everything inside the braces is resolved to a value that is also
+// passed in based on their position.
+
+// String variables can store strings created using formatting techniques.
+decimal initialPrice = 67.55m;
+decimal salePrice = 59.99m;
+
+string priceReductionDetails = String.Format("You saved {0:C2} off the regular {1:C2} price. ", (initialPrice - salePrice), initialPrice);
+Console.WriteLine(priceReductionDetails);
+// output: You saved $7.56 off the regular $67.55 price.
+
+// combine multiple formatted strings
+decimal regularPrice = 67.55m;
+decimal reducedPrice = 59.99m;
+string priceReduction = String.Format("You saved {0:C2} off the regular {1:C2} price. ", (regularPrice - reducedPrice), regularPrice);
+
+priceReduction += $"A discount of {((price - salePrice) / price):P2}!"; //inserted
+Console.WriteLine(priceReduction);
+// output: You saved $7.56 off the regular $67.55 price. A discount of 11.19%!
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/*
+ 
+1. You can use composite formatting or string interpolation to format strings.
+2. With composite formatting, you use a string template containing one or more replacement tokens in the form {0}. You also supply a list of arguments 
+   that are matched with the replacement tokens based on their order. Composite formatting works when using string.Format() or Console.WriteLine().
+3. With string interpolation, you use a string template containing the variable names you want replaced surrounded by curly braces. Use the $ directive 
+   before the string template to indicate you want the string to be interpolated.
+4. Format currency using a :C specifier.
+5. Format numbers using a :N specifier. Control the precision (number of values after the decimal point) using a number after the :N like {myNumber:N3}.
+6. Format percentages using the :P format specifier.
+7. Formatting currency and numbers depend on the end user's culture, a five character code that includes the user's country/region and language (per the 
+   settings on their computer).
+
+ */
+
+#endregion
+
+#region Explore string interpolation
+
+int invoiceNumber = 1201;
+decimal productShares = 25.4568m;
+decimal subtotal = 2750.00m;
+decimal taxPercentage = .15825m;
+decimal total = 3185.19m;
+
+Console.WriteLine($"Invoice Number:\t {invoiceNumber}");
+Console.WriteLine($"Shares:\t\t {productShares:N3} Products");
+Console.WriteLine($"Sub Total:\t {subtotal:C}");
+Console.WriteLine($"Tax:\t\t {taxPercentage:P2}");
+Console.WriteLine($"Total Billed:\t {total:C}");
+
+
+string first = "Hello";
+string second = "World";
+string result = string.Format("{0} {1}!", first, second);
+Console.WriteLine(result);
+
+string input = "Pad this";
+
+Console.WriteLine(input.PadLeft(12, '-'));
+Console.WriteLine(input.PadRight(12, '-'));
+//Console.WriteLine(input.PadLeft(12));
+//Console.WriteLine(input.PadRight(12));
 #endregion
