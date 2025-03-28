@@ -418,12 +418,18 @@ string newProduct = "Glorious Future";
 decimal newReturn = 0.13125m;
 decimal newProfit = 63000000.0m;
 
-// Your logic here
+string messageToCustomer = $"Dear {customerName},\r\nAs a customer of our Magic Yield offering we are excited to tell " +
+    $"you about a new financial product that would dramatically increase your return.\r\n\r\nCurrently, " +
+    $"you own {currentShares:C} shares at a return of {currentReturn:P}.\r\n\r\nOur new product, {newProduct} offers a " +
+    $"return of {newReturn:P}.  Given your current volume, your potential profit would be {newProfit:C}.\r\n";
+
+Console.WriteLine(messageToCustomer);
 
 Console.WriteLine("Here's a quick comparison:\n");
 
-string comparisonMessage = "";
+string comparisonMessage = $"{currentProduct.PadLeft(13)}\t\t{currentReturn:P}\t{currentProfit:C}\r\n{newProduct.PadLeft(17)}\t{newReturn:P}\t{newProfit:C}";
 
 // Your logic here
 
 Console.WriteLine(comparisonMessage);
+
