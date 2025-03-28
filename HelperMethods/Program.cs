@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Security;
 
-Console.WriteLine("\tWorking With Helper Methods\n\t\t*******");
+Console.WriteLine("\tWorking With Helper Methods\n\t\t*******\n\n");
 
 /*
 In this module, you work with C# arrays to store sequences of values in a single data structure. Once you store data in an array, 
@@ -358,7 +358,7 @@ Console.WriteLine(priceReduction);
 #endregion
 
 #region Explore string interpolation
-
+/*
 int invoiceNumber = 1201;
 decimal productShares = 25.4568m;
 decimal subtotal = 2750.00m;
@@ -383,4 +383,47 @@ Console.WriteLine(input.PadLeft(12, '-'));
 Console.WriteLine(input.PadRight(12, '-'));
 //Console.WriteLine(input.PadLeft(12));
 //Console.WriteLine(input.PadRight(12));
+*/
 #endregion
+
+
+#region Working with padded strings
+/*
+string paymentID = "769C";
+string payeeName = "Mr. Stephen Ortega";
+string paymentAmount = "$5,000.00";
+
+var formattedLine = paymentID.PadRight(6);
+formattedLine += payeeName.PadRight(24);
+formattedLine += paymentAmount.PadLeft(10);
+
+Console.WriteLine("1234567890123456789012345678901234567890");
+Console.WriteLine(formattedLine);
+
+string myWords = "Learning C#";
+Console.WriteLine(myWords.PadLeft(12, '-'));
+Console.WriteLine(myWords.Length);
+*/
+#endregion
+
+
+string customerName = "Ms. Barros";
+
+string currentProduct = "Magic Yield";
+int currentShares = 2975000;
+decimal currentReturn = 0.1275m;
+decimal currentProfit = 55000000.0m;
+
+string newProduct = "Glorious Future";
+decimal newReturn = 0.13125m;
+decimal newProfit = 63000000.0m;
+
+// Your logic here
+
+Console.WriteLine("Here's a quick comparison:\n");
+
+string comparisonMessage = "";
+
+// Your logic here
+
+Console.WriteLine(comparisonMessage);
