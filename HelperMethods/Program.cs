@@ -406,7 +406,6 @@ Console.WriteLine(myWords.Length);
 */
 #endregion
 
-
 string customerName = "Ms. Barros";
 
 string currentProduct = "Magic Yield";
@@ -418,18 +417,31 @@ string newProduct = "Glorious Future";
 decimal newReturn = 0.13125m;
 decimal newProfit = 63000000.0m;
 
-string messageToCustomer = $"Dear {customerName},\r\nAs a customer of our Magic Yield offering we are excited to tell " +
-    $"you about a new financial product that would dramatically increase your return.\r\n\r\nCurrently, " +
-    $"you own {currentShares:C} shares at a return of {currentReturn:P}.\r\n\r\nOur new product, {newProduct} offers a " +
-    $"return of {newReturn:P}.  Given your current volume, your potential profit would be {newProfit:C}.\r\n";
+string messageToCustomer1 = $"Dear {customerName}";
+string messageToCustomer2 = $"As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.\r\n";
+string messageToCustomer3 = $"Currently, you own {currentShares:C} shares at a return of {currentReturn:P}.\r\n";
+string messageToCustomer4 = $"Our new product, {newProduct} offers a return of {newReturn:P}.  Given your current volume, your potential profit would be {newProfit:C}.\r\n";
 
-Console.WriteLine(messageToCustomer);
+Console.WriteLine(messageToCustomer1.PadLeft(17));
+Console.WriteLine(messageToCustomer2.PadLeft(148));
+Console.WriteLine(messageToCustomer3.PadLeft(66));
+Console.WriteLine(messageToCustomer4.PadLeft(138));
 
-Console.WriteLine("Here's a quick comparison:\n");
+string comparisonsString = "Here's a quick comparison:\n";
+Console.WriteLine(comparisonsString.PadLeft(29));
 
-string comparisonMessage = $"{currentProduct.PadLeft(13)}\t\t{currentReturn:P}\t{currentProfit:C}\r\n{newProduct.PadLeft(17)}\t{newReturn:P}\t{newProfit:C}";
+string comparisonMessage1 = $"{currentProduct}";
+string comparisonMessage2 = $"{currentReturn:P}";
+string comparisonMessage3 = $"{currentProfit:C}";
 
-// Your logic here
+string comparisonMessage4 = $"{newProduct}";
+string comparisonMessage5 = $"{newReturn:P}";
+string comparisonMessage6 = $"{newProfit:C}";
 
-Console.WriteLine(comparisonMessage);
+Console.Write(comparisonMessage1.PadLeft(13));
+Console.Write(comparisonMessage2.PadLeft(15));
+Console.WriteLine(comparisonMessage3.PadLeft(17));
 
+Console.Write(comparisonMessage4.PadLeft(17));
+Console.Write(comparisonMessage5.PadLeft(11));
+Console.WriteLine(comparisonMessage6.PadLeft(17));
