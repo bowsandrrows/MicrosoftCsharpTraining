@@ -1,8 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Drawing;
-using System.Security;
-
-Console.WriteLine("\tWorking With Helper Methods\n\t\t*******\n\n");
+﻿Console.WriteLine("\tWorking With Helper Methods\n\t\t*******\n\n");
 
 /*
 In this module, you work with C# arrays to store sequences of values in a single data structure. Once you store data in an array, 
@@ -406,6 +402,8 @@ Console.WriteLine(myWords.Length);
 */
 #endregion
 
+#region chellenge string interpolation
+
 string customerName = "Ms. Barros";
 
 string currentProduct = "Magic Yield";
@@ -445,3 +443,5 @@ Console.WriteLine(comparisonMessage3.PadLeft(17));
 Console.Write(comparisonMessage4.PadLeft(17));
 Console.Write(comparisonMessage5.PadLeft(11));
 Console.WriteLine(comparisonMessage6.PadLeft(17));
+
+#endregion
