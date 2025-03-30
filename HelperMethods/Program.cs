@@ -444,4 +444,38 @@ Console.Write(comparisonMessage4.PadLeft(17));
 Console.Write(comparisonMessage5.PadLeft(11));
 Console.WriteLine(comparisonMessage6.PadLeft(17));
 
+// Training for String.Format()
+Console.WriteLine("\r\n");
+
+decimal myDec1 = 123.45m;
+decimal myDec2 = 321.54m;
+
+var result = $"{String.Format(format: "{0:C}", myDec1).PadRight(10)}";
+Console.WriteLine(result);
+
+result += String.Format("{0:C}", myDec2);
+Console.WriteLine($"This is myDec1 and myDec2: {result}");
+
+var result2 = $"{myDec1:C}";
+var result3 = $"{myDec2:C}";
+Console.WriteLine($"The same: {result2.PadLeft(24, '-')} {result3,9}");
+Console.WriteLine();
+
+string firstName = "John";
+string lastName = "Doe";
+int age = 25;
+
+// Correct indexing
+string correct = String.Format("Hello, my name is {0} {1} and I am {2} years old.", firstName, lastName, age);
+
+// Incorrect indexing
+string incorrect = String.Format("Hello, my name is {0} {2} and I am {1} years old.", firstName, lastName, age);
+
+Console.WriteLine("Correct: " + correct);
+Console.WriteLine("Incorrect: " + incorrect);
+
+decimal num = 12345.67m;
+Console.WriteLine(String.Format("{0:N2}", num));
+
+Console.WriteLine("C110".PadLeft(6, '0'));
 #endregion
