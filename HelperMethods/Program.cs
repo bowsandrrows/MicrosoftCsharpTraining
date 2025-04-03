@@ -490,9 +490,8 @@ int closingPosition = message.IndexOf(')');
 
 openingPosition += 1;
 
-int extractLength = closingPosition - openingPosition;
-Console.WriteLine(message.Substring(openingPosition, extractLength));
-Console.WriteLine();
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
 
 
 
@@ -505,7 +504,9 @@ int openingSpanPosition = newMessage.IndexOf(openSpan);
 int closingSpanPosition = newMessage.IndexOf(closeSpan);
 
 openingSpanPosition += openSpan.Length;
-int length = closingSpanPosition - openingSpanPosition;
-Console.WriteLine(newMessage.Substring(openingSpanPosition, length));
+
+int extractedLength = closingSpanPosition - openingSpanPosition;
+Console.WriteLine(newMessage.Substring(openingSpanPosition, extractedLength));
 Console.WriteLine($" open span: {openSpan.Length}");
+
 #endregion
