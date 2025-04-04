@@ -509,7 +509,7 @@ int extractedLength = closingSpanPosition - openingSpanPosition;
 Console.WriteLine(newMessage.Substring(openingSpanPosition, extractedLength));
 Console.WriteLine($" open span: {openSpan.Length}");
 
-Console.WriteLine("Type your sentence in here:");
+Console.WriteLine("\r\nType your sentence in here:");
 string? inputSentence = Console.ReadLine();
 Console.WriteLine("What word would like to find index of?");
 string? findWordIndex = Console.ReadLine();
@@ -529,4 +529,6 @@ if (inputSentence != null && findWordIndex != null)
     }
 }
 
+string myString = "C# Time";
+Console.WriteLine(myString.IndexOf('C'));
 #endregion
