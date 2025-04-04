@@ -521,7 +521,7 @@ if (inputSentence != null && findWordIndex != null)
 
     if (result != -1){
         Console.WriteLine($"\nIndex of {findWordIndex} is = {result}");
-        Console.WriteLine();
+        Console.WriteLine($"\r\n({inputSentence.Substring(0, result)}) this come before the word {findWordIndex}");
     }
     else
     {
