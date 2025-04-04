@@ -510,17 +510,18 @@ Console.WriteLine(newMessage.Substring(openingSpanPosition, extractedLength));
 Console.WriteLine($" open span: {openSpan.Length}");
 
 Console.WriteLine("Type your sentence in here:");
-string? foundResult = Console.ReadLine();
+string? inputSentence = Console.ReadLine();
 Console.WriteLine("What word would like to find index of?");
 string? findWordIndex = Console.ReadLine();
 
-if (foundResult != null && findWordIndex != null)
+if (inputSentence != null && findWordIndex != null)
 {
     string? findIndex = findWordIndex;
-    int result = foundResult.IndexOf(findIndex);
+    int result = inputSentence.IndexOf(findIndex);
 
     if (result != -1){
         Console.WriteLine($"\nIndex of {findWordIndex} is = {result}");
+        Console.WriteLine();
     }
     else
     {
