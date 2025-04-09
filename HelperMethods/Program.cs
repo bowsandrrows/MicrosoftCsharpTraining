@@ -482,8 +482,9 @@ Console.WriteLine(comparisonMessage6.PadLeft(17));
 #endregion
 
 #region string's IndexOf() and Substring() helper methods
-
+/*
 string message = "Find what is (inside the parentheses)";
+
 
 int openingPosition = message.IndexOf('(');
 int closingPosition = message.IndexOf(')');
@@ -530,5 +531,39 @@ if (inputSentence != null && findWordIndex != null)
 }
 
 string myString = "C# Time";
-Console.WriteLine(myString.IndexOf('C'));
+Console.WriteLine(myString.IndexOf('#'));
+*/
+#endregion
+
+#region The IndexOf() and LastIndexOf() methods to find the positions of characters and substrings within a given string.
+/* 
+The .IndexOf() method returns the index of the first occurrence of a specified character or substring within a given string. 
+The method .LastIndexOf() returns the index position of the last occurrence of a character or string within a given string. 
+Both the Indexof() and LastIndexOf() methods return -1 if the character or string is not found.
+*/
+
+//string message = "(What if) I am (only interested) in the last (set of parentheses)?";
+//int openingPosition = message.LastIndexOf('p');
+
+//openingPosition++;
+//int closingPosition = message.LastIndexOf(')');
+//int length = closingPosition - openingPosition;
+//Console.WriteLine(message.Substring(openingPosition, length));
+
+string message = "(What if) there are (more than) one (set of parentheses)?";
+while (true)
+{
+    int openingPosition = message.IndexOf('(');
+    if (openingPosition == -1) break;
+
+    openingPosition += 1;
+    int closingPosition = message.IndexOf(')');
+    int length = closingPosition - openingPosition;
+    Console.WriteLine(message.Substring(openingPosition, length));
+
+    // Note the overload of the Substring to return only the remaining 
+    // unprocessed message:
+    message = message.Substring(closingPosition + 1);
+}
+
 #endregion
