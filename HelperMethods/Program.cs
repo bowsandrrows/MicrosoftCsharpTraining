@@ -535,7 +535,7 @@ Console.WriteLine(myString.IndexOf('#'));
 */
 #endregion
 
-#region The IndexOf() and LastIndexOf() methods to find the positions of characters and substrings within a given string.
+#region The IndexOf(), .IndexOfAny() and LastIndexOf() methods to find the positions of characters and substrings within a given string.
 /* 
 The .IndexOf() method returns the index of the first occurrence of a specified character or substring within a given string. 
 The method .LastIndexOf() returns the index position of the last occurrence of a character or string within a given string. 
@@ -574,10 +574,32 @@ while (true)
 
 #region Work with different types of symbol sets with IndexOfAny()
 
-string massageGiven = "Hello, World!";
-char[] charsToFind = ['e'];
+string message = "Hello, world!";
+char[] charsToFind = ['a', 'e', 'i'];
 
-int index = massageGiven.LastIndexOfAny(charsToFind);
-Console.WriteLine($"Found '{massageGiven[index]}' at index: {index}.");
+int index = message.IndexOfAny( charsToFind );
 
+Console.WriteLine( $"Found '{message[ index ]}' in '{message}' at index: {index}." );
+Console.WriteLine();
+
+foreach( char c in charsToFind )
+{
+    int index2 = message.IndexOf( c );
+
+    string result = index2 != -1 ? $"Found '{c}' in '{message}' at index: {index2}" : $"No '{c}' has been found in {message}";
+    Console.WriteLine(result);
+
+    //if (index2 != -1)
+    //{
+    //    Console.WriteLine($"Found '{c}' in '{message}' at index: {index2}");
+
+    //}
+    
+    //Console.WriteLine( $"Found '{message[index2]}' in {message} at index: {index2}." );
+}
+bool x = message.Contains( '!' );
+if( x )
+{
+    Console.WriteLine($"found '!' in {message} at index: {message.IndexOf('!')}");
+}
 #endregion
