@@ -542,28 +542,42 @@ The method .LastIndexOf() returns the index position of the last occurrence of a
 Both the Indexof() and LastIndexOf() methods return -1 if the character or string is not found.
 */
 
-//string message = "(What if) I am (only interested) in the last (set of parentheses)?";
-//int openingPosition = message.LastIndexOf('p');
+/*
+string messageString = "(What if) I am (only interested) in the last (set of parentheses)?";
+int openingIndex = messageString.LastIndexOf( '(' );
 
-//openingPosition++;
-//int closingPosition = message.LastIndexOf(')');
-//int length = closingPosition - openingPosition;
-//Console.WriteLine(message.Substring(openingPosition, length));
+openingIndex++;
+int closingIndex = messageString.LastIndexOf( ')' );
+int extractedLength = closingIndex - openingIndex;
+Console.WriteLine( messageString.Substring( openingIndex, extractedLength ) );
+*/
 
+/*
 string message = "(What if) there are (more than) one (set of parentheses)?";
 while (true)
 {
-    int openingPosition = message.IndexOf('(');
+    int openingPosition = messageString.IndexOf('(');
     if (openingPosition == -1) break;
 
     openingPosition += 1;
-    int closingPosition = message.IndexOf(')');
+    int closingPosition = messageString.IndexOf(')');
     int length = closingPosition - openingPosition;
-    Console.WriteLine(message.Substring(openingPosition, length));
+    Console.WriteLine(messageString.Substring(openingPosition, length));
 
     // Note the overload of the Substring to return only the remaining 
     // unprocessed message:
-    message = message.Substring(closingPosition + 1);
+    message = message.Substring( closingPosition + 1 );
 }
+*/
+
+#endregion
+
+#region Work with different types of symbol sets with IndexOfAny()
+
+string massageGiven = "Hello, World!";
+char[] charsToFind = ['e'];
+
+int index = massageGiven.LastIndexOfAny(charsToFind);
+Console.WriteLine($"Found '{massageGiven[index]}' at index: {index}.");
 
 #endregion
