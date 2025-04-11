@@ -674,12 +674,26 @@ while ( true )
 */
 #endregion
 
-#region
+#region Remove() method
+/*
 // The Remove() method works similarly to the Substring() method. You supply a starting position and the length
 // to remove those characters from the string.
+
 string data = "12345John Smith          5000  3  ";
 Console.WriteLine(data);
 string updatedData = data.Remove( 5, 20 );
-Console.WriteLine( updatedData );
-
+Console.WriteLine(updatedData + updatedData.Length );    // 123455000  3  14
+string ExtractedSubstring = data.Substring( 5, updatedData.Length - 4 );
+Console.WriteLine( ExtractedSubstring );    // John Smith
+*/
 #endregion
+
+#region Replace() method
+// Replace() method replaces every instance of the given characters, not just the first or last instance.
+string message = "This--is--ex-amp-le--da-ta";
+Console.WriteLine(message);
+message = message.Replace("--", " ");
+message =message.Replace("-", "");
+Console.WriteLine(message);
+#endregion
+
