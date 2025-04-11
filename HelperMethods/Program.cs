@@ -573,7 +573,7 @@ while (true)
 #endregion
 
 #region Work with different types of symbol sets with IndexOfAny()
-
+/*
 string message = "Hello, world!";
 char[] charsToFind = ['a', 'e', 'i'];
 
@@ -602,4 +602,23 @@ if( x )
 {
     Console.WriteLine($"found '!' in {message} at index: {message.IndexOf('!')}");
 }
+*/
+
+string message = "Help (find) the {opening symbols}";
+Console.WriteLine( $"Searching THIS Message: {message}\n" );
+
+char[] openSymbols = [ '[', '{', '(' ];
+
+int startPosition = 5;
+int startPosition2 = 5 + 11;
+
+int openingPosition = message.IndexOfAny( openSymbols );
+
+Console.WriteLine( $"Found WITHOUT using startPosition: {message[ openingPosition.. ]}" );
+
+openingPosition = message.IndexOfAny( openSymbols, startPosition );
+Console.WriteLine( $"Found WITH using startPosition {startPosition}: {message.Substring( openingPosition )}\n" );
+
+openingPosition = message.IndexOfAny( openSymbols, startPosition2 );
+Console.WriteLine( $"Found WITH using startPosition {startPosition2}: {message[ openingPosition.. ]}\n" );
 #endregion
