@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d818674c-f526-4873-82b3-3f1229c54056</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>hello_ironPython.py</StartupFile>
+    <StartupFile>PythonApplication1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

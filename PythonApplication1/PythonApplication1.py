@@ -7,7 +7,7 @@ myDecimal = 2.14
 print(f"This is decimal: {myDecimal}")
 
 myInt = myDecimal
-print(f"This is integer: {myInt}")
+print(f"This is integer: {myInt:02}")
 
 
 my_result = conversion("2", "3")
