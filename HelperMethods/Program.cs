@@ -717,22 +717,29 @@ const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
 const string openingTag = "<span>";
 const string closingTag = "</span>";
+const string openingDivTag = "<div>";
+const string closingDivTag = "</div>";
 
 string quantity = "";
 string output = "";
 
 if ( input.Contains( openingTag ) && input.Contains( closingTag ) )
 {
-    int spanOpeningIndex = input.IndexOf( openingTag);
+    int spanOpeningIndex = input.IndexOf( openingTag );
     int startPositon = spanOpeningIndex + openingTag.Length;
-    
+
     string exstractedValue = input.Substring( startPositon );
     int spanClosingIndex = exstractedValue.IndexOf( closingTag );
 
     quantity = $"{exstractedValue.Remove( spanClosingIndex )}";
 }
+if ( input.Contains( openingDivTag ) )
+{
+    var z = input.Remove( input.IndexOf( openingDivTag ), openingDivTag.Length );   // <h2>Widgets &trade;</h2><span>5000</span></div> removes tag - div
+    Console.WriteLine(z);
+}
 
-Console.WriteLine( $"Quantity: {quantity}");
+Console.WriteLine( $"Quantity: {quantity}" );
 Console.WriteLine( output );
 
 #endregion
