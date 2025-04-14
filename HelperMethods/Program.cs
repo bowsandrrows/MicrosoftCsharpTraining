@@ -708,7 +708,7 @@ Console.WriteLine(message);
 // Output: < h2 > Widgets & reg;</ h2 >< span > 5000 </ span >
 
 // Begin adding your solution code to the starter code under the comment // Your work here.
-// Set the quantity variable to the value obtained by extracting the text between the <span> and </span> tags.
+// Set the quantity variable to the value obtained by extracting the text between the <span> and </span> tags.  ✔️ done
 // Set the output variable to the value of input, then remove the <div> and </div> tags.
 // Replace the HTML character ™ (&trade;) with ® (&reg;) in the output variable.
 // Run your solution and verify the output put matches the expected output.
