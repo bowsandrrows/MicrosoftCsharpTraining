@@ -729,7 +729,7 @@ if ( input.Contains( start_word ) && input.Contains( end_word ) )
     string exstractedValue = input.Substring( startPositon );
     int spanClosingIndex = exstractedValue.IndexOf( end_word );
 
-    quantity = $"{exstractedValue.Remove(spanClosingIndex)}";
+    quantity = $"{exstractedValue[ ..spanClosingIndex ]}";
 }
 
 Console.WriteLine( $"Quantity: {quantity}");
