@@ -713,6 +713,8 @@ const string openingTag = "<span>";
 const string closingTag = "</span>";
 const string openingDivTag = "<div>";
 const string closingDivTag = "</div>";
+const string tradeSymbol = "&trade;";
+const string regSymbol = "&reg;";
 
 string quantity = "";
 string output = "";
@@ -731,7 +733,7 @@ if ( input.Contains( openingDivTag ) && input.Contains( closingTag ) )
 {
     string cleanedHtml = input.Remove( input.IndexOf( openingDivTag ), openingDivTag.Length );   
  
-    output= cleanedHtml.Remove(cleanedHtml.IndexOf( closingDivTag ), closingDivTag.Length ).Replace("&trade;", "&reg;");
+    output = cleanedHtml.Remove(cleanedHtml.IndexOf( closingDivTag ), closingDivTag.Length ).Replace(tradeSymbol, regSymbol);
 }
 Console.WriteLine( $"Quantity: {quantity}" );
 Console.WriteLine( $"Output: {output}" );
