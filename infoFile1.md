@@ -95,3 +95,44 @@ Incorrect: Hello, my name is John 25 and I am Doe years old.
   - `{1}` references `lastName` instead of `age`.
 
 This misalignment leads to confusing and incorrect output. Proper indexing ensures each placeholder matches the intended value! Would you like more examples or a deeper dive into formatting techniques?
+
+`color: #61dafb`;
+`background-color: #282c34`;
+
+Here are some **cool, attractive colors** that are **easy on the eyes** and work well in **WPF applications**:
+
+1. **Slate Blue (#6A5ACD)** , **rgb(106, 90, 205)** – A soft, muted blue with a hint of purple, offering a calming effect.
+2. **Sea Green (#2E8B57)** , **rgb(46, 139, 87)** – A refreshing green that is gentle on the eyes and works well for UI backgrounds.
+3. **Steel Gray (#708090)** , **rgb(112, 128, 144)** – A neutral, modern shade that provides a sleek and professional look.
+4. **Lavender Mist (#E6E6FA)** , **rgb(230, 230, 250)** – A subtle pastel purple that adds elegance without being overwhelming.
+5. **Teal (#008080)** , **rgb(0, 128, 128)** – A balanced mix of blue and green, creating a sophisticated and soothing tone.
+6. **Warm Beige (#F5F5DC)**, **rgb(245, 245, 220)** – A soft, warm neutral that enhances readability and reduces eye strain.
+
+You can explore more color palettes [here](https://www.color-hex.com/color-palette/76564) and 
+[here](https://www.color-hex.com/color-palette/1009880). If you're designing a WPF app, consider using 
+these colors for backgrounds, buttons, and accents to create a visually appealing and comfortable UI.
+
+C# provides several methods for locating characters or substrings within a string. Some commonly used methods include:
+
+- **`IndexOf`**: Finds the index of the first occurrence of a character or substring.
+- **`LastIndexOf`**: Finds the index of the last occurrence of a character or substring.
+- **`Contains`**: Checks if a substring is present in the string (returns `true` or `false`).
+- **`StartsWith` / `EndsWith`**: Checks if a string starts or ends with a given substring.
+- **`Substring`**: Extracts a portion of a string based on index.
+- **`Regex.Match` / `Regex.IsMatch`**: For more advanced pattern matching using regular expressions.
+
+Here's a quick example using `IndexOf`:
+
+```csharp
+string text = "Hello, world!";
+int position = text.IndexOf("world");
+
+if (position != -1)
+{
+    Console.WriteLine($"'world' found at index {position}");
+}
+else
+{
+    Console.WriteLine("'world' not found");
+}
+```

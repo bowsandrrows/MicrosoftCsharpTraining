@@ -1,4 +1,7 @@
-﻿Console.WriteLine("\tWorking With Helper Methods\n\t\t*******\n\n");
+﻿using System;
+using System.Collections.Generic;
+
+Console.WriteLine( "\tWorking With Helper Methods\n\t\t*******\n\n" );
 
 /*
 In this module, you work with C# arrays to store sequences of values in a single data structure. Once you store data in an array, 
@@ -676,8 +679,7 @@ while ( true )
 
 #region Remove() method
 /*
-// The Remove() method works similarly to the Substring() method. You supply a starting position and the length
-// to remove those characters from the string.
+// The Remove() method works similarly to the Substring() method. You supply a starting position and the length to remove those characters from the string.
 
 string data = "12345John Smith          5000  3  ";
 Console.WriteLine(data);
@@ -689,11 +691,48 @@ Console.WriteLine( ExtractedSubstring );    // John Smith
 #endregion
 
 #region Replace() method
+/*
 // Replace() method replaces every instance of the given characters, not just the first or last instance.
 string message = "This--is--ex-amp-le--da-ta";
 Console.WriteLine(message);
 message = message.Replace("--", " ");
 message =message.Replace("-", "");
 Console.WriteLine(message);
+*/
 #endregion
 
+
+#region Challenge to extract, replace, and remove data from an input string.
+// output:
+// Quantity: 5000
+// Output: < h2 > Widgets & reg;</ h2 >< span > 5000 </ span >
+
+// Begin adding your solution code to the starter code under the comment // Your work here.
+// Set the quantity variable to the value obtained by extracting the text between the <span> and </span> tags.
+// Set the output variable to the value of input, then remove the <div> and </div> tags.
+// Replace the HTML character ™ (&trade;) with ® (&reg;) in the output variable.
+// Run your solution and verify the output put matches the expected output.
+
+const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+
+const string start_word = "<span>";
+const string end_word = "</span>";
+
+string quantity = "";
+string output = "";
+
+if ( input.Contains( start_word ) && input.Contains( end_word ) )
+{
+    int spanOpeningIndex = input.IndexOf( start_word);
+    int startPositon = spanOpeningIndex + start_word.Length;
+    
+    string exstractedValue = input.Substring( startPositon );
+    int spanClosingIndex = exstractedValue.IndexOf( end_word );
+
+    quantity = $"{exstractedValue.Remove(spanClosingIndex)}";
+}
+
+Console.WriteLine( $"Quantity: {quantity}");
+Console.WriteLine( output );
+
+#endregion
