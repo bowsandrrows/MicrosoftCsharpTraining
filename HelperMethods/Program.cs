@@ -715,19 +715,19 @@ Console.WriteLine(message);
 
 const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
-const string start_word = "<span>";
-const string end_word = "</span>";
+const string openingTag = "<span>";
+const string closingTag = "</span>";
 
 string quantity = "";
 string output = "";
 
-if ( input.Contains( start_word ) && input.Contains( end_word ) )
+if ( input.Contains( openingTag ) && input.Contains( closingTag ) )
 {
-    int spanOpeningIndex = input.IndexOf( start_word);
-    int startPositon = spanOpeningIndex + start_word.Length;
+    int spanOpeningIndex = input.IndexOf( openingTag);
+    int startPositon = spanOpeningIndex + openingTag.Length;
     
     string exstractedValue = input.Substring( startPositon );
-    int spanClosingIndex = exstractedValue.IndexOf( end_word );
+    int spanClosingIndex = exstractedValue.IndexOf( closingTag );
 
     quantity = $"{exstractedValue.Remove( spanClosingIndex )}";
 }
