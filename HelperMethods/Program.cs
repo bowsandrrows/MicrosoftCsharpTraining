@@ -702,17 +702,10 @@ Console.WriteLine(message);
 */
 #endregion
 
-
 #region Challenge to extract, replace, and remove data from an input string.
 // output:
 // Quantity: 5000
-// Output: < h2 > Widgets &reg;</h2 >< span > 5000 </span >
-
-// Begin adding your solution code to the starter code under the comment // Your work here.
-// Set the quantity variable to the value obtained by extracting the text between the <span> and </span> tags.  ✔️ done
-// Set the output variable to the value of input, then remove the <div> and </div> tags.
-// Replace the HTML character ™ (&trade;) with ® (&reg;) in the output variable.
-// Run your solution and verify the output put matches the expected output.
+// Output: <h2>Widgets &reg;</h2><span>5000</span>
 
 const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
@@ -740,7 +733,6 @@ if ( input.Contains( openingDivTag ) && input.Contains( closingTag ) )
  
     output= cleanedHtml.Remove(cleanedHtml.IndexOf( closingDivTag ), closingDivTag.Length ).Replace("&trade", "&reg;");
 }
-
 Console.WriteLine( $"Quantity: {quantity}" );
 Console.WriteLine( $"Output: {output}" );
 
