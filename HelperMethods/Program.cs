@@ -679,7 +679,8 @@ while ( true )
 
 #region Remove() method
 /*
-// The Remove() method works similarly to the Substring() method. You supply a starting position and the length to remove those characters from the string.
+// The Remove() method works similarly to the Substring() method. You supply a starting position and the length 
+// to remove those characters from the string.
 
 string data = "12345John Smith          5000  3  ";
 Console.WriteLine(data);
@@ -705,7 +706,7 @@ Console.WriteLine(message);
 #region Challenge to extract, replace, and remove data from an input string.
 // output:
 // Quantity: 5000
-// Output: < h2 > Widgets & reg;</ h2 >< span > 5000 </ span >
+// Output: < h2 > Widgets &reg;</h2 >< span > 5000 </span >
 
 // Begin adding your solution code to the starter code under the comment // Your work here.
 // Set the quantity variable to the value obtained by extracting the text between the <span> and </span> tags.  ✔️ done
@@ -733,13 +734,14 @@ if ( input.Contains( openingTag ) && input.Contains( closingTag ) )
 
     quantity = $"{exstractedValue.Remove( spanClosingIndex )}";
 }
-if ( input.Contains( openingDivTag ) )
+if ( input.Contains( openingDivTag ) && input.Contains( closingTag ) )
 {
-    var z = input.Remove( input.IndexOf( openingDivTag ), openingDivTag.Length );   // <h2>Widgets &trade;</h2><span>5000</span></div> removes tag - div
-    Console.WriteLine(z);
+    string cleanedHtml = input.Remove( input.IndexOf( openingDivTag ), openingDivTag.Length );   
+ 
+    output= cleanedHtml.Remove(cleanedHtml.IndexOf( closingDivTag ), closingDivTag.Length ).Replace("&trade", "&reg;");
 }
 
 Console.WriteLine( $"Quantity: {quantity}" );
-Console.WriteLine( output );
+Console.WriteLine( $"Output: {output}" );
 
 #endregion
