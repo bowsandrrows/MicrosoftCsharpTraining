@@ -252,7 +252,7 @@ foreach (var i in newMessagearray)
 #endregion
 
 
-#region Complete a challenge to parse a string of orders, sort the orders and tag possible errors
+#region Challenge to parse a string of orders, sort the orders and tag possible errors
 /* output
 A345
 B123
@@ -703,6 +703,7 @@ Console.WriteLine(message);
 #endregion
 
 #region Challenge to extract, replace, and remove data from an input string.
+/*
 // output:
 // Quantity: 5000
 // Output: <h2>Widgets &reg;</h2><span>5000</span>
@@ -737,5 +738,5 @@ if ( input.Contains( openingDivTag ) && input.Contains( closingTag ) )
 }
 Console.WriteLine( $"Quantity: {quantity}" );
 Console.WriteLine( $"Output: {output}" );
-
+*/
 #endregion
