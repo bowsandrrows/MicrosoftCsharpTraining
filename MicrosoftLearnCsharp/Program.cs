@@ -12,6 +12,7 @@ string suggestedDonation = "";
 int maxPets = 8;
 string? readResult;
 string menuSelection = "";
+decimal decimalDonation = 0.00m;
 bool appRunning = true;
 
 // 3# array used to store runtime data, there is no persisted data
@@ -82,6 +83,12 @@ for ( int i = 0; i < maxPets; i++ )
     ourAnimals[ i, 4 ] = "Physical description: " + animalPhysicalDescription;
     ourAnimals[ i, 5 ] = "Personality: " + animalPersonalityDescription;
     ourAnimals[ i, 6 ] = "Suggested Donation: " + suggestedDonation;
+
+    if ( !decimal.TryParse(suggestedDonation, out decimalDonation) )
+    {
+        decimalDonation = 45.00m;   // if suggestedDonation NOT a number, default to 45.00
+    }
+    ourAnimals[i, 6] = $"Suggested Donation: {decimalDonation:C2}";
 }
 
 do
@@ -124,7 +131,7 @@ do
                 if ( ourAnimals[ i, 0 ] != "ID #: " )
                 {
                     Console.WriteLine();
-                    for ( int j = 0; j < 6; j++ )
+                    for ( int j = 0; j < 7; j++ )
                     {
                         Console.WriteLine( ourAnimals[ i, j ] );
                     }
