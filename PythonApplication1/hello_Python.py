@@ -1,5 +1,5 @@
 from time import sleep
-import os, sys
+import os
 
 # from time import sleep
 # import os
@@ -21,11 +21,17 @@ def main():
     # Checks if input is not an empty string.
     print("Type the words you're looking for. Separated by comma. Or type Q/q to quit")
     while True:
-        get_user_input = input("Your words:  ").strip()
+        try:
+            get_user_input = input("\nYour words:  ").strip()
+        except EOFError:
+            print("Unexpected input, please try again.")
+            continue
+
         if get_user_input == "":
+            print("Empty input. Please try again or type Q/q to quit.")
             continue
         elif get_user_input.lower() == "q":
-            sys.exit()
+            break
         else:
             print(search_fun())
             break
