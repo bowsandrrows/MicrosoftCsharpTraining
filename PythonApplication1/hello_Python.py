@@ -16,14 +16,14 @@ import os
 
 
 
-
 def main():
     # Checks if input is not an empty string.
     print("Type the words you're looking for. Separated by comma. Or type Q/q to quit")
     while True:
         try:
-            get_user_input = input("\nYour words:  ").strip()
-        except EOFError:
+            get_user_input = input("\nYour words: ").strip()
+            # checks for EOFError (End of File Error)
+        except EOFError:                                           
             print("Unexpected input, please try again.")
             continue
 
