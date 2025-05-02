@@ -150,6 +150,7 @@ do
             }
 
             string[] dogSearches = dogCharacteristics.Split(",");
+			
             // trim leading and trailing spaces from each search term
             for (int i = 0; i < dogSearches.Length; i++)
             {
@@ -157,6 +158,7 @@ do
             }
 
             Array.Sort(dogSearches);
+			
             // #4 update to "rotating" animation with countdown
             string[] searchingIcons = {" |", " /", "--", " \\", " *"};
 

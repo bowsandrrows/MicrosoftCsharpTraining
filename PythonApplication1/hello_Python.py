@@ -46,13 +46,13 @@ def search_fun():
     RESET = "\033[0m"  # Resets color back to default
 
     icons_list = [f"{YELLOW}.", f"{RED}..", f"{BLUE}...", f"{RED}....", f"{GREEN}.....", f"{BLUE}......"]
-
-    for i in range(3):
+    for _ in range(1):
         os.system('cls' if os.name == 'nt' else 'clear')  # Clears the console at start
-        for j in icons_list:
-            print(f"{GREEN}Searching {j}{RESET}")  # Reset ensures the color doesn't persist
-            sleep(0.5)
-            os.system('cls' if os.name == 'nt' else 'clear')  # Clears the console after each iteration
+        for i in icons_list:
+            for j in range(4).__reversed__():
+                print(f"{GREEN}Searching {i}{RESET} {f"{RED} {j}{RESET}"}")  # Reset ensures the color doesn't persist
+                sleep(0.5)
+                os.system('cls' if os.name == 'nt' else 'clear')  # Clears the console after each iteration
 
     return("Could not find it")
 
