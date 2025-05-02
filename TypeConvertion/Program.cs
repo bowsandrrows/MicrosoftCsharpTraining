@@ -172,3 +172,23 @@ Console.WriteLine("\t---------------------------------------\n");
 float myFloat = 3.14f;
 int myInt = (int)myFloat;
 Console.WriteLine( myInt);
+
+Console.Write("What's your grade? ");
+var massege = 0;
+var myGrade = int.TryParse(Console.ReadLine()!, out massege);
+if (!myGrade)
+{
+    Console.WriteLine( "\nInvalid input" );
+}
+else
+{
+   var result = massege switch
+{
+    1 => "WOW You're a genius!",
+    2 or 3 => "This is also very good.",
+    4 => "Well, you've barely made it.",
+    _ => "That is not good at all!"
+};
+Console.WriteLine(result); 
+}
+
