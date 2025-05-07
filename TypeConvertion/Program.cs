@@ -152,43 +152,45 @@ int value1 = 11;
 decimal value2 = 6.2m;
 float value3 = 4.3f;
 
-int result1 = value1 / (int)value2; // 2
-Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+int result1 = value1 / ( int ) value2; // 2
+Console.WriteLine( $"Divide value1 by value2, display the result as an int: {result1}" );
 
-decimal result2 = value2 / (decimal)value3; // 1.4418604651162790697674418605
-Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
+decimal result2 = value2 / ( decimal ) value3; // 1.4418604651162790697674418605
+Console.WriteLine( $"Divide value2 by value3, display the result as a decimal: {result2}" );
 
 float result3 = value3 / value1; // 0.3909091
-Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+Console.WriteLine( $"Divide value3 by value1, display the result as a float: {result3}" );
 
 string myString = "4.123456789";
-decimal myDecimal = decimal.Parse(myString); // 4.123456789
-decimal myNewDecimal = Convert.ToDecimal(myString); // 4.123456789
-Console.WriteLine($"Parse: {myDecimal} & {myNewDecimal}");
+decimal myDecimal = decimal.Parse( myString ); // 4.123456789
+decimal myNewDecimal = Convert.ToDecimal( myString ); // 4.123456789
+Console.WriteLine( $"Parse: {myDecimal} & {myNewDecimal}" );
 
-Console.WriteLine("\t---------------------------------------\n");
+Console.WriteLine( "\t---------------------------------------\n" );
 
 
 float myFloat = 3.14f;
-int myInt = (int)myFloat;
-Console.WriteLine( myInt);
+int myInt = ( int ) myFloat;
+Console.WriteLine( myInt );
 
-Console.Write("What's your grade? ");
+#region switch exspretion 
+
+Console.Write( "What's your grade? " );
 var massege = 0;
-var myGrade = int.TryParse(Console.ReadLine()!, out massege);
-if (!myGrade)
+var myGrade = int.TryParse( Console.ReadLine()!, out massege );
+if ( !myGrade )
 {
     Console.WriteLine( "\nInvalid input" );
 }
 else
 {
-   var result = massege switch
-{
-    1 => "WOW You're a genius!",
-    2 or 3 => "This is also very good.",
-    4 => "Well, you've barely made it.",
-    _ => "That is not good at all!"
-};
-Console.WriteLine(result); 
+    var result = massege switch
+    {
+        1 => "WOW You're a genius!",
+        2 or 3 => "This is also very good.",
+        4 => "Well, you've barely made it.",
+        _ => "That is not good at all!"
+    };
+    Console.WriteLine( result );
 }
-
+#endregion
