@@ -1,5 +1,6 @@
 ﻿Console.WriteLine( "\tTHE CODE BELOW IS ACTIVE\n" );
 
+ReusableMethods.Run();
 
 /*
 Console.WriteLine( "Contents of Array:" );
@@ -37,6 +38,8 @@ else
 
 */
 
+#region
+/*
 Console.WriteLine( "\nGuess 5 numbers from 1 to 100.\n5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100. " );
 Console.WriteLine( "To quit at any time type Q/q" );
 int guessedNumbers = 1;
@@ -64,9 +67,8 @@ while ( guessedNumbers < 6 )
         guessedNumbers++;
     }
 }
-
-
-
+*/
+#endregion
 //Console.WriteLine( "\nGuess 5 numbers from 1 to 100." );
 //Console.WriteLine( "5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100." );
 //Console.WriteLine( "To quit at any time, type Q/q." );
