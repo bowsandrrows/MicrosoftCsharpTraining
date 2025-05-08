@@ -37,38 +37,74 @@ else
 
 */
 
-Console.WriteLine( "\nGuese 5 numbers from 1 to 100.\n5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100. " );
-Console.WriteLine( "To quit at any time type Q/q" );
+//Console.WriteLine( "\nGuese 5 numbers from 1 to 100.\n5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100. " );
+//Console.WriteLine( "To quit at any time type Q/q" );
+//int guessedNumbers = 1;
+//int currentNumber = 1;
+//while ( guessedNumbers < 6 )
+//{
+//    Console.Write( $"Enter {guessedNumbers} number:  " );
+//    string? prompt = Console.ReadLine();
+//    if ( prompt.ToLower() == "q" )
+//    {
+//        break;
+//    }
+//    else
+//    {
+//        var userNumberChoice = int.TryParse( prompt, out currentNumber );
+
+//        if ( !userNumberChoice )
+//        {
+//            Console.WriteLine( "Enter number in digits" );
+//        }
+//        else if ( userNumberChoice == default || currentNumber == default )
+//        {
+//            Console.WriteLine( "number can not be 0" );
+//        }
+//        else
+//        {
+//            guessedNumbers++;
+//        }
+//    }
+
+
+//}
+
+
+ 
+Console.WriteLine("\nGuess 5 numbers from 1 to 100.");
+Console.WriteLine("5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100.");
+Console.WriteLine("To quit at any time, type Q/q.");
+
 int pickedNumbers = 1;
-int currentNumber = 1;
-while ( pickedNumbers < 6 )
+
+while (pickedNumbers <= 5)
 {
-    Console.Write( $"Enter {pickedNumbers} number:  " );
+    Console.Write($"Enter number {pickedNumbers}: ");
     string? prompt = Console.ReadLine();
-    if ( prompt.ToLower() == "q" )
+
+    if (prompt?.ToLower() == "q")
     {
         break;
     }
-    else
-    {
-        var userNumberChoise = int.TryParse( prompt, out currentNumber );
 
-        if ( !userNumberChoise )
-        {
-            Console.WriteLine( "Enter number in digits" );
-        }
-        else if ( userNumberChoise == default || currentNumber == default )
-        {
-            Console.WriteLine( "number can not be 0" );
-        }
-        else
-        {
-            pickedNumbers++;
-        }
+    bool isValidNumber = int.TryParse(prompt, out int currentNumber);
+
+    if (!isValidNumber)
+    {
+        Console.WriteLine("Enter a number in digits.");
+        continue;  // Repeats the prompt instead of increasing `pickedNumbers`
+    }
+    else if (currentNumber <= 0)
+    {
+        Console.WriteLine("Number must be greater than zero.");
+        continue;  // Again, retries input
     }
 
-
+    pickedNumbers++; 
 }
+ 
+ 
 
 /*
 
