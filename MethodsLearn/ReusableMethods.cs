@@ -27,21 +27,13 @@ public class ReusableMethods
         {
             diff = 100 * ( Math.Abs( newGMT ) - Math.Abs( currentGMT ) );
 
-            /* Adjust the times by adding the difference, keeping the value within 24 hours */
-            for ( int i = 0; i < times.Length; i++ )
-            {
-                times[ i ] = ( ( times[ i ] + diff ) ) % 2400;
-            }
+            AdjustTimes();
         }
         else
         {
             diff = 100 * ( Math.Abs( newGMT ) + Math.Abs( currentGMT ) );
 
-            /* Adjust the times by adding the difference, keeping the value within 24 hours */
-            for ( int i = 0; i < times.Length; i++ )
-            {
-                times[ i ] = ( ( times[ i ] + diff ) ) % 2400;
-            }
+            AdjustTimes();
         }
 
         Console.WriteLine( "New Medicine Schedule:" );
