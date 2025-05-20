@@ -1,129 +1,40 @@
 ﻿Console.WriteLine( "\tTHE CODE BELOW IS ACTIVE\n" );
 
-ReusableMethods.Run();
+//ReusableMethods.Run();
+
 
 /*
-Console.WriteLine( "Contents of Array:" );
-int[] ints = [ 1, 2, 3 ];
+if ipAddress consists of 4 numbers
+and
+if each ipAddress number has no leading zeroes
+and
+if each ipAddress number is in range 0 - 255
 
-void ShowResult()
+then ipAddress is valid
+
+else ipAddress is invalid
+*/
+
+
+if ( ValidateLength() && ValidateZeroes() && ValidateRange())
 {
-    foreach ( var item in ints )
-    {
-        Console.Write( $"Item - {item}," );
-    }
-    Console.WriteLine();
-}
-ShowResult();
-
-Console.WriteLine( "What's your grade? " );
-
-var massege = 0;
-var myGrade = int.TryParse( Console.ReadLine()!, out massege );
-if ( !myGrade )
-{
-    Console.WriteLine( "\nInvalid input" );
+    Console.WriteLine($"ip is a valid IPv4 address");
 }
 else
 {
-    var result = massege switch
-    {
-        1 => "WOW You're a genius!",
-        2 or 3 => "Ok, this is also good.",
-        4 => "Well, you've barely made it.",
-        _ => "That is not good at all!"
-    };
-    Console.WriteLine( result );
+    Console.WriteLine($"ip is an invalid IPv4 address");
 }
 
-*/
-
-#region
-/*
-Console.WriteLine( "\nGuess 5 numbers from 1 to 100.\n5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100. " );
-Console.WriteLine( "To quit at any time type Q/q" );
-int guessedNumbers = 1;
-while ( guessedNumbers < 6 )
+void ValidateLength()
 {
-    Console.Write( $"Enter {guessedNumbers} number:  " );
-    string? prompt = Console.ReadLine();
-    if ( prompt?.ToLower() == "q" )
-    {
-        break;
-    }
 
-    bool userNumberChoice = int.TryParse( prompt, out int currentNumber );
-
-    if ( !userNumberChoice )
-    {
-        Console.WriteLine( "Enter number in digits" );
-    }
-    else if ( currentNumber <= 0 )
-    {
-        Console.WriteLine( "numbers can not be less then 1" );
-    }
-    else
-    {
-        guessedNumbers++;
-    }
 }
-*/
-#endregion
-//Console.WriteLine( "\nGuess 5 numbers from 1 to 100." );
-//Console.WriteLine( "5 numbers = $10000, 4 numbers = $2000, 3 numbers = $100." );
-//Console.WriteLine( "To quit at any time, type Q/q." );
-
-//int pickedNumbers = 1;
-
-//while ( pickedNumbers <= 5 )
-//{
-//    Console.Write( $"Enter number {pickedNumbers}: " );
-//    string? prompt = Console.ReadLine();
-
-//    if ( prompt?.ToLower() == "q" )
-//    {
-//        break;
-//    }
-
-//    bool isValidNumber = int.TryParse( prompt, out int currentNumber );
-
-//    if ( !isValidNumber )
-//    {
-//        Console.WriteLine( "Enter a number in digits." );
-//        continue;  // Repeats the prompt instead of increasing `pickedNumbers`
-//    }
-//    else if ( currentNumber <= 0 )
-//    {
-//        Console.WriteLine( "Number must be greater than zero." );
-//        continue;  // Again, retries input
-//    }
-
-//    pickedNumbers++;
-//}
-
-
-
-/*
-
-if ( userNumberChoices == "" )
+void ValidateZeroes()
 {
-    Console.WriteLine( "\nInvalid input" );
+
 }
-else
+
+void ValidateRange()
 {
-    Console.WriteLine( "\nWinning numbers are:" );
-    DisplayRandomNumbers();
+
 }
-
-
-void DisplayRandomNumbers()
-{
-    Random random = new();  // Random random = new Random();
-
-    for ( int i = 0; i < 5; i++ )
-    {
-        Console.Write( $"{random.Next( 1, 101 )} " );
-    }
-    Console.WriteLine();
-}
-*/
