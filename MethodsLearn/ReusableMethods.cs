@@ -19,6 +19,8 @@ public class ReusableMethods
         Console.WriteLine( "Enter new GMT" );
         int newGMT = Convert.ToInt32( Console.ReadLine() );
 
+
+
         if ( Math.Abs( newGMT ) > 12 || Math.Abs( currentGMT ) > 12 )
         {
             Console.WriteLine( "Invalid GMT" );
