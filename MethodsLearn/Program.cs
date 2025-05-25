@@ -40,8 +40,10 @@ foreach ( string ip in ipv4Input )
 
     void ValidateLength()
     {
-        validLength = address.Length == 4;
+        // this expression assigns a Bolen true or false to the variable validLength directly
+        validLength = address.Length == 4; 
     }
+
     void ValidateZeroes()
     {
         foreach ( string number in address )
