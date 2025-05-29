@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsLearn", "MethodsLear
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortuneeller", "Fortuneeller\Fortuneeller.csproj", "{A060CCCE-136C-4D40-9BDC-05FF43596B1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{EC7EA3BB-861B-4E4F-B94B-CDA7E03CD675}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{A060CCCE-136C-4D40-9BDC-05FF43596B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A060CCCE-136C-4D40-9BDC-05FF43596B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A060CCCE-136C-4D40-9BDC-05FF43596B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7EA3BB-861B-4E4F-B94B-CDA7E03CD675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7EA3BB-861B-4E4F-B94B-CDA7E03CD675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7EA3BB-861B-4E4F-B94B-CDA7E03CD675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7EA3BB-861B-4E4F-B94B-CDA7E03CD675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
