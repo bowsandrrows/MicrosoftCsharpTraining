@@ -6,7 +6,7 @@
 string[] students = { "Jenna", "Ayesha", "Carlos", "Viktor" };
 
 DisplayStudents( students );
-DisplayStudents( new string[] { "Robert", "Vanya" } );
+DisplayStudents( new string[] { "Robert", "Vanya", "Leo" } );
 
 void DisplayStudents( string[] students )
 {
