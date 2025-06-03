@@ -68,7 +68,7 @@ static void Multiply( int a, int b, int c )
 #endregion
 
 #region Test pass by reference
-
+/*
 int[] array = { 1, 2, 3, 4, 5 };
 
 PrintArray( array );
@@ -91,4 +91,21 @@ void Clear( int[] array )
         array[ i ] = 0;
     }
 }
+*/
+#endregion
+
+#region Test with strings
+
+string status = "Healthy";
+
+Console.WriteLine( $"Start: {status}" );
+SetHealthStatus( false );
+Console.WriteLine( $"End: {status}" );
+
+void SetHealthStatus(bool isHealthy )
+{
+    status = ( isHealthy ? "Healthy" : "Unhealthy" );
+    Console.WriteLine( $"Middle: {status}" );
+}
+
 #endregion
