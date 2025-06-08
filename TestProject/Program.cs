@@ -95,17 +95,102 @@ void Clear( int[] array )
 #endregion
 
 #region Test with strings
-
+/*
 string status = "Healthy";
 
 Console.WriteLine( $"Start: {status}" );
 SetHealthStatus( false );
 Console.WriteLine( $"End: {status}" );
 
-void SetHealthStatus(bool isHealthy )
+void SetHealthStatus( bool isHealthy )
 {
+    ArgumentException.ThrowIfNullOrWhiteSpace( status );
     status = ( isHealthy ? "Healthy" : "Unhealthy" );
     Console.WriteLine( $"Middle: {status}" );
 }
-
+*/
 #endregion
+
+#region named and optional parameters.
+/*
+string[] guestList = { "Rebecca", "Nadia", "Noor", "Jonte", "Leo", "Edward", "Eva" };
+string[] rsvps = new string[ 10 ];
+int count = 0;
+
+
+RSVP( "Rebecca", 1, "none", true );
+RSVP( "Nadia", 2, "Nuts", true );
+RSVP( "Linh", 2, "none", false );
+RSVP( "Tony", 1, "Jackfruit", true );
+RSVP( "Noor", 4, "none", false );
+RSVP( "Jonte", 2, "Stone fruit", false );
+RSVP( "Edward", 4, "Peanuts", false );
+RSVP( "Leo", 9, "none", true );
+ShowRSVPs();
+
+
+void RSVP( string name, int partySize, string allergies, bool inviteOnly )
+{
+    if ( inviteOnly )
+    {
+        bool found = false;
+        foreach ( string? guest in guestList )
+        {
+            if ( guest.Equals( name ) )
+            {
+                found = true; break;
+            }
+        }
+        if ( !found )
+        {
+            Console.WriteLine( $"Sorry, {name} is not on the guest list" );
+            return;
+        }
+    }
+    rsvps[ count ] = $"Name: {name}, \tParty Size: {partySize}, \tAllergies: {allergies}";
+    count++;
+}
+
+void ShowRSVPs()
+{
+    Console.WriteLine( "\nTotal RSVPs:" );
+    for ( int i = 0; i < count; i++ )
+    {
+        Console.WriteLine( rsvps[ i ] );
+    }
+}
+
+*/
+#endregion
+
+
+
+string[,] corporate = {
+    {"Robert", "Bavin"}, {"Simon", "Bright"},
+    {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+    {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
+};
+
+string[,] external = {
+    {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+    {"Shay", "Lawrence"}, {"Daren", "Valdes"}
+};
+
+char at = '@';
+
+
+string CreateMail()
+{
+    string externalDomain = "hayworth.com";
+
+    for ( int i = 0; i < corporate.GetLength( 0 ); i++ )
+    {
+        // display internal email addresses
+    }
+
+    for ( int i = 0; i < external.GetLength( 0 ); i++ )
+    {
+        // display external email addresses
+    }
+}
+
