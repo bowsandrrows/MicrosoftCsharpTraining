@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Data;
+using System.Numerics;
 
 Console.WriteLine( "\n\tCreate a method with parameters\n" );
 
@@ -176,21 +177,31 @@ string[,] external = {
     {"Shay", "Lawrence"}, {"Daren", "Valdes"}
 };
 
-char at = '@';
+;
+string corporateDomain = "contoso.com";
 
-
-string CreateMail()
+void CreateMail( string externalDomain = "hayworth.com", char at = '@' )
 {
-    string externalDomain = "hayworth.com";
-
     for ( int i = 0; i < corporate.GetLength( 0 ); i++ )
     {
         // display internal email addresses
+        for ( int j = 0; j < corporate.GetLength( 1 ); j++ )
+        {
+            Console.Write( $"{corporate[ i, j ].ToLower()}" );
+        }
+        Console.Write( $"{at}{corporateDomain}\n" );
     }
+
+    
 
     for ( int i = 0; i < external.GetLength( 0 ); i++ )
     {
-        // display external email addresses
+        foreach ( var item in external )
+        {
+            Console.Write( $"{item[0]}");
+        }
+        Console.WriteLine();
     }
 }
 
+CreateMail();
