@@ -177,31 +177,24 @@ string[,] external = {
     {"Shay", "Lawrence"}, {"Daren", "Valdes"}
 };
 
-;
+
 string corporateDomain = "contoso.com";
 
-void CreateMail( string externalDomain = "hayworth.com", char at = '@' )
+for ( int i = 0; i < corporate.GetLength( 0 ); i++ )
 {
-    for ( int i = 0; i < corporate.GetLength( 0 ); i++ )
-    {
-        // display internal email addresses
-        for ( int j = 0; j < corporate.GetLength( 1 ); j++ )
-        {
-            Console.Write( $"{corporate[ i, j ].ToLower()}" );
-        }
-        Console.Write( $"{at}{corporateDomain}\n" );
-    }
-
-    
-
-    for ( int i = 0; i < external.GetLength( 0 ); i++ )
-    {
-    }
+    string firstNameShort = corporate[i, 0 ].Substring(0, 2);
+    string lastName = corporate[i, 1 ];
+    Console.WriteLine((firstNameShort + lastName).ToLower() + '@' + corporateDomain);
 }
 
-CreateMail();
+
+for ( int i = 0; i < external.GetLength( 0 ); i++ )
+{
+
+}
 
 
+/*
 string[,] corporate =
     {
         {"Robert", "Bavin"}, {"Simon", "Bright"},
@@ -232,3 +225,5 @@ void DisplayEmail( string first, string last, string domain = "contoso.com" )
     email = email.ToLower();
     Console.WriteLine( $"{email}@{domain}" );
 }
+*/
+
