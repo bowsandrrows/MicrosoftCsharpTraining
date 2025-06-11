@@ -177,22 +177,26 @@ string[,] external = {
     {"Shay", "Lawrence"}, {"Daren", "Valdes"}
 };
 
-
 string corporateDomain = "contoso.com";
+string externalDomain = "hayworth.com";
 
 for ( int i = 0; i < corporate.GetLength( 0 ); i++ )
 {
-    string firstNameShort = corporate[i, 0 ].Substring(0, 2);
-    string lastName = corporate[i, 1 ];
-    Console.WriteLine((firstNameShort + lastName).ToLower() + '@' + corporateDomain);
+    CreateEmailAddress( employeeFirstNameIndex: corporate[i, 0], employeeLastIndex: corporate[i, 1], corporateDomain );
 }
-
+Console.WriteLine();
 
 for ( int i = 0; i < external.GetLength( 0 ); i++ )
 {
-
+    CreateEmailAddress( employeeFirstNameIndex: external[i, 0], employeeLastIndex: external[i, 1], externalDomain );
 }
 
+void CreateEmailAddress( string employeeFirstNameIndex, string employeeLastIndex, string domain = "")
+{
+    string? firstNameShort = string.Concat( employeeFirstNameIndex.AsSpan( 0, 2 ), employeeLastIndex );
+    
+    Console.WriteLine( $"{firstNameShort.ToLower()}@{domain}" );
+}
 
 /*
 string[,] corporate =
@@ -226,4 +230,3 @@ void DisplayEmail( string first, string last, string domain = "contoso.com" )
     Console.WriteLine( $"{email}@{domain}" );
 }
 */
-
