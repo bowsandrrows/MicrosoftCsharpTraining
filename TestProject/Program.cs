@@ -165,7 +165,8 @@ void ShowRSVPs()
 #endregion
 
 
-
+#region 
+/*
 string[,] corporate = {
     {"Robert", "Bavin"}, {"Simon", "Bright"},
     {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
@@ -197,6 +198,8 @@ void CreateEmailAddress( string employeeFirstNameIndex, string employeeLastIndex
     
     Console.WriteLine( $"{firstNameShort.ToLower()}@{domain}" );
 }
+*/
+#endregion
 
 /*
 string[,] corporate =
