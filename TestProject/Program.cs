@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using System.Numerics;
 
+
+
 Console.WriteLine( "\n\tCreate a method with parameters\n" );
 
 
