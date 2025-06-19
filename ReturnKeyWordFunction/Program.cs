@@ -19,12 +19,14 @@ double GetDiscountedPrice( int itemIndex )
     return items[itemIndex] * (1 - discounts[itemIndex]);
 }
 
-void TotalMeetsMinimum()
+bool TotalMeetsMinimum()
 {
     // Check if the total meets the minimum
+    return total >= minimumSpend;
 }
 
-void FormatDecimal( double input )
+string FormatDecimal( double input )
 {
     // Format the double so only 2 decimal places are displayed
+    return input.ToString().Substring(0, 5);
 }
