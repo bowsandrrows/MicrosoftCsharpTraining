@@ -7,11 +7,18 @@ double minimumSpend = 30.00;
 double[] items = { 15.97, 3.50, 12.25, 22.99, 10.98 };
 double[] discounts = { 0.30, 0.00, 0.10, 0.20, 0.50 };
 
-for ( int i = 0; i < items.Length; i++ )
+for ( int itemIndex = 0; itemIndex < items.Length; itemIndex++ )
 {
-    total += GetDiscountedPrice( i );
+    total += GetDiscountedPrice( itemIndex );
 }
-Console.WriteLine( $"Total: ${total}" );
+
+total -= TotalMeetsMinimum() ? 5.00 : 0.00;    
+//if ( TotalMeetsMinimum() )
+//{
+//    total -= 5;
+//}
+
+Console.WriteLine( $"Total: ${FormatDecimal(total)}" );
 
 double GetDiscountedPrice( int itemIndex )
 {
@@ -32,5 +39,5 @@ bool TotalMeetsMinimum()
 string FormatDecimal( double input )
 {
     // Format the double so only 2 decimal places are displayed
-    return input.ToString().Substring(0, 5);
+    return input.ToString().Substring( 0, 5 );
 }
