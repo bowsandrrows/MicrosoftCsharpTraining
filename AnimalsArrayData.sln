@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReturnKeyWordFunction", "ReturnKeyWordFunction\ReturnKeyWordFunction.csproj", "{68AA67C5-2ABF-47C4-BC89-54554AC426D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReturnNumbersFromMethods", "ReturnNumbersFromMethods\ReturnNumbersFromMethods.csproj", "{36D38242-FF78-4A25-9567-DAFF92E81768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{68AA67C5-2ABF-47C4-BC89-54554AC426D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68AA67C5-2ABF-47C4-BC89-54554AC426D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68AA67C5-2ABF-47C4-BC89-54554AC426D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D38242-FF78-4A25-9567-DAFF92E81768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D38242-FF78-4A25-9567-DAFF92E81768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D38242-FF78-4A25-9567-DAFF92E81768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D38242-FF78-4A25-9567-DAFF92E81768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
