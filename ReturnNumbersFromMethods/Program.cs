@@ -3,7 +3,7 @@ Console.WriteLine( "\tReturn numbers from methods\n" );
 
 
 #region Create a method that returns an integer
-
+/*
 double usd = 23.73;
 int vnd = UsdToVnd( usd );
 
@@ -21,12 +21,17 @@ double VndToUsd(int vnd )
     double rate = 23500;
     return vnd / rate;
 }
-
+*/
 #endregion
 
-#region
+#region Return strings from methods
 
-
+///  reverse a string by iterating from the end of the string. 
+string ReversWord( string word )
+{
+    string result = "";
+    return result;
+}
 
 
 

@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		HTMLPage1.html = HTMLPage1.html
 		infoFile1.md = infoFile1.md
+		RockFile1.md = RockFile1.md
+		RockToPrintFile1.md = RockToPrintFile1.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsLearn", "MethodsLearn\MethodsLearn.csproj", "{A7A07DAA-F904-4134-9E21-CCF36B223874}"
