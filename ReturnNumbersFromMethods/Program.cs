@@ -25,7 +25,7 @@ double VndToUsd(int vnd )
 #endregion
 
 #region Return strings from methods
-
+/*
 string input = "there are snakes at the zoo";
 
 Console.WriteLine( input );
@@ -51,5 +51,12 @@ string ReverseSentence( string input )
     }
     return result.Trim();
 }
+*/
+#endregion
+
+#region Return Booleans from methods
+
+
+
 
 #endregion
