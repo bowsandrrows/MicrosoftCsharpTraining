@@ -26,10 +26,21 @@ double VndToUsd(int vnd )
 
 #region Return strings from methods
 
-///  reverse a string by iterating from the end of the string. 
-string ReversWord( string word )
+
+string word = "Hello";
+string getWord = ReversWord(  word );
+Console.WriteLine(word);
+Console.WriteLine(getWord);
+
+    ///  reverse a string by iterating from the end of the string. 
+    string ReversWord( string word )
 {
     string result = "";
+
+    for ( global::System.Int32 i = word.Length - 1; i >= 0; i -= 1 )
+    {
+        result += word[ i ];
+    }
     return result;
 }
 
