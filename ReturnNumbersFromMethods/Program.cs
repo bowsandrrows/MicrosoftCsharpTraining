@@ -26,24 +26,30 @@ double VndToUsd(int vnd )
 
 #region Return strings from methods
 
+string input = "there are snakes at the zoo";
 
-string word = "Hello";
-string getWord = ReversWord(  word );
-Console.WriteLine(word);
-Console.WriteLine(getWord);
+Console.WriteLine( input );
+Console.WriteLine( ReverseSentence( input ) );
 
-    ///  reverse a string by iterating from the end of the string. 
-    string ReversWord( string word )
+string ReverseWord( string word )
 {
     string result = "";
-
-    for ( global::System.Int32 i = word.Length - 1; i >= 0; i -= 1 )
+    for ( int i = word.Length - 1; i >= 0; i-- )
     {
         result += word[ i ];
     }
     return result;
 }
 
-
+string ReverseSentence( string input )
+{
+    string result = "";
+    string[] words = input.Split( " " );
+    foreach ( string word in words )
+    {
+        result += ReverseWord( word ) + " ";
+    }
+    return result.Trim();
+}
 
 #endregion
