@@ -1,4 +1,7 @@
 ﻿
+
+
+
 Console.WriteLine( "\tReturn numbers from methods\n" );
 
 
@@ -55,8 +58,31 @@ string ReverseSentence( string input )
 #endregion
 
 #region Return Booleans from methods
+/*
+string[] words = [ "racecar", "talented", "deified", "tent", "tenet" ];
 
+Console.WriteLine( "Is it a palindrome?" );
+foreach ( string word in words )
+{
+    Console.WriteLine( $"{word}: {IsPalindrome( word )}" );
+}
 
+static bool IsPalindrome( string word )
+{
+    int start = 0;
+    int end = word.Length - 1;
 
+    while ( start < end )
+    {
+        if ( word[ start ] != word[end] )
+        {
+            return false;
+        }
+        start++;
+        end--;
+    }
 
+    return true;
+}
+*/
 #endregion

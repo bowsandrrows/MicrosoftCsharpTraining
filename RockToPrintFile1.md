@@ -1,28 +1,45 @@
-﻿### 🪧 Collector’s Display Card: *Alsterfire*
-
-- **Specimen Name:** Alsterfire  
-- **Type:** Basaltic Scoria  
-- **Found At:** Forest near Lake Alster, Karlstad, Sweden  
-- **Date Discovered:** 2025/05/10 
-- **Discovered By:** Edward Brandt  
-- **Origin Theory:** Volcanic fragment transported by glacial movement during the Ice Age
+﻿the classic way—using a `foreach` or `for` loop—to reverse each string in a `List<string>` and store the results in a **new list**, all without LINQ.
 
 ---
 
-### 📐 Description
--  **Texture:** Porous (vesicular) and melted—classic volcanic appearance  
--  **Color:** Dark gray to black with reddish tones  
--  **Inclusions:** Quartz-like yellowish microcrystals  
--  **Density:** Heavy — does **not** float  
--  **Hardness:** Scratches glass (Mohs ~6)  
--  **Magnetism:** Non-magnetic  
+### Using `foreach` loop:
+```csharp
+List<string> original = new List<string> { "apple", "banana", "cherry" };
+List<string> reversed = new List<string>();
+
+foreach (string word in original)
+{
+    char[] chars = word.ToCharArray();
+    Array.Reverse(chars);
+    reversed.Add(new string(chars));
+}
+
+foreach (string rev in reversed)
+{
+    Console.WriteLine(rev);
+}
+```
 
 ---
 
-### 🌍 Story in Stone  
-Forged in a fiery eruption millions of years ago, *Alsterfire* is believed to be a fragment of basaltic scoria—ejected as molten lava and cooled mid-air. Over millennia, it may have crossed continents by ice and stream before settling quietly near Lake Alster. A relic of ancient eruptions history.
-Notes:
-A smoothed, vesicular volcanic fragment—likely ejected during a basaltic eruption and shaped over time by ancient ice and river activity. Heavy, glass-scratching, and flecked with pale yellow crystal inclusions. A fiery remnant of Earth’s dynamic past, carried from distant eruptions into the calm, forested soils of Sweden.
+### Using `for` loop:
+```csharp
+List<string> original = new List<string> { "apple", "banana", "cherry" };
+List<string> reversed = new List<string>();
 
+for (int i = 0; i < original.Count; i++)
+{
+    char[] chars = original[i].ToCharArray();
+    Array.Reverse(chars);
+    reversed.Add(new string(chars));
+}
+
+foreach (string rev in reversed)
+{
+    Console.WriteLine(rev);
+}
+```
 
 ---
+
+Both approaches do the job without LINQ and are great for beginners or anyone looking for a more explicit, step-by-step style.
