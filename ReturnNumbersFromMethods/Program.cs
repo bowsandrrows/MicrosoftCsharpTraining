@@ -151,46 +151,73 @@ class Person
 
 #region add methods to make the game playable
 
-//Random rnd = new();
+Random rnd = new();
 
 Console.WriteLine( "Would you like to play? (Y/N)" );
 string? answer = Console.ReadLine();
-if ( !string.IsNullOrWhiteSpace( answer?.ToUpper() ) && answer == "y" )
+if ( !string.IsNullOrWhiteSpace( answer ) && answer == "y" || answer == "Y" )
 {
-    Console.WriteLine( "Good!" + answer );
+    var cleaned_answer = answer.Trim();
+
+    ShouldPlay( cleaned_answer );
 }
 else
 {
     return;
 }
 
-//if ( ShouldPlay() )
-//{
-//    PlayGame();
-//}
+if ( ShouldPlay( answer ) )
+{
+    PlayGame();
+}
+else
+{
+    return;
+}
 
-//void PlayGame()
-//{
-//    var play = true;
+void PlayGame()
+{
+    var play = true;
 
-//    while ( play )
-//    {
-//        var target = rnd.Next( 1, 6 );
-//        var roll = rnd.Next( 1, 6 );
+    while ( play )
+    {
+        var target = rnd.Next( 1, 6 );
+        var roll = rnd.Next( 1, 6 );
 
-//        Console.WriteLine( $"Roll a number greater than {target} to win!" );
-//        Console.WriteLine( $"You rolled a {roll}" );
-//        Console.WriteLine( WinOrLose() );
-//        Console.WriteLine( "\nPlay again? (Y/N)" );
+        Console.WriteLine( $"Roll a number greater than {target} to win!" );
+        Console.WriteLine( $"You rolled a {roll}" );
 
-//        play = ShouldPlay();
-//    }
-//}
+        Console.WriteLine( WinOrLose( target, roll ) );
+        Console.WriteLine( "\nPlay again? (Y/N)" );
+        string? playAgainAnswer = Console.ReadLine();
+        if ( !string.IsNullOrWhiteSpace(playAgainAnswer) && playAgainAnswer == "y" || playAgainAnswer == "Y")
+        {
+            var answer = playAgainAnswer.Trim();
+            play = ShouldPlay( answer );
+        }
+        else
+        {
+            break;
+        }
+    }
+}
 
-//bool ShouldPlay()
-//{
-//    throw new NotImplementedException();
-//}
+string WinOrLose( int target, int roll )
+{
+    if ( roll < target || roll == target )
+    {
+        return $"You lose {roll} is not greater than {target}";
+    }
+    else
+    {
+        return $"You won {roll} is greater than {target}";
+    }
+}
+
+bool ShouldPlay( string answer )
+{
+    return true;
+}
 
 
 #endregion
