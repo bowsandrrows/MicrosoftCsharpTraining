@@ -1,8 +1,4 @@
-﻿
-
-
-
-using System;
+﻿using System;
 
 Console.WriteLine( "\tReturn numbers from methods\n" );
 
@@ -139,4 +135,62 @@ class Person
     }
 }
 */
+#endregion
+
+#region  returning arrays from methods
+
+//int[] TwoCoins( int[] coins, int target )
+//{
+//    for ( global::System.Int32 curr = 0; curr < coins.Length; curr++ )
+//    {
+
+//    }
+//    return new int[ 0 ];
+//}
+#endregion
+
+#region add methods to make the game playable
+
+//Random rnd = new();
+
+Console.WriteLine( "Would you like to play? (Y/N)" );
+string? answer = Console.ReadLine();
+if ( !string.IsNullOrWhiteSpace( answer?.ToUpper() ) && answer == "y" )
+{
+    Console.WriteLine( "Good!" + answer );
+}
+else
+{
+    return;
+}
+
+//if ( ShouldPlay() )
+//{
+//    PlayGame();
+//}
+
+//void PlayGame()
+//{
+//    var play = true;
+
+//    while ( play )
+//    {
+//        var target = rnd.Next( 1, 6 );
+//        var roll = rnd.Next( 1, 6 );
+
+//        Console.WriteLine( $"Roll a number greater than {target} to win!" );
+//        Console.WriteLine( $"You rolled a {roll}" );
+//        Console.WriteLine( WinOrLose() );
+//        Console.WriteLine( "\nPlay again? (Y/N)" );
+
+//        play = ShouldPlay();
+//    }
+//}
+
+//bool ShouldPlay()
+//{
+//    throw new NotImplementedException();
+//}
+
+
 #endregion

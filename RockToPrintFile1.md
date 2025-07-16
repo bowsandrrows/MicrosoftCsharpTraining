@@ -7,9 +7,7 @@ Make sure this is included:
 ```csharp
 using System.Linq;
 ```
-
 ---
-
 ### 🔍 Filtering
 
 | Expression            | Purpose                            |
@@ -20,7 +18,6 @@ var adults = people.Where(p => p.Age >= 18);
 ```
 
 ---
-
 ### 🔄 Transformation
 
 | Expression            | Purpose                            |
