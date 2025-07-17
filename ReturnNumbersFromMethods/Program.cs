@@ -154,12 +154,11 @@ class Person
 Random rnd = new();
 
 Console.WriteLine( "Would you like to play? (Y/N)" );
-string? answer = Console.ReadLine();
+string? answer = Console.ReadLine().Trim();
 if ( !string.IsNullOrWhiteSpace( answer ) && answer == "y" || answer == "Y" )
 {
-    var cleaned_answer = answer.Trim();
 
-    ShouldPlay( cleaned_answer );
+    ShouldPlay( answer );
 }
 else
 {
@@ -189,15 +188,14 @@ void PlayGame()
 
         Console.WriteLine( WinOrLose( target, roll ) );
         Console.WriteLine( "\nPlay again? (Y/N)" );
-        string? playAgainAnswer = Console.ReadLine();
+        string? playAgainAnswer = Console.ReadLine().Trim();
         if ( !string.IsNullOrWhiteSpace(playAgainAnswer) && playAgainAnswer == "y" || playAgainAnswer == "Y")
         {
-            var answer = playAgainAnswer.Trim();
-            play = ShouldPlay( answer );
+            play = ShouldPlay(playAgainAnswer );
         }
         else
         {
-            break;
+            return;
         }
     }
 }
@@ -208,10 +206,7 @@ string WinOrLose( int target, int roll )
     {
         return $"You lose {roll} is not greater than {target}";
     }
-    else
-    {
-        return $"You won {roll} is greater than {target}";
-    }
+    return $"You won {roll} is greater than {target}";
 }
 
 bool ShouldPlay( string answer )
